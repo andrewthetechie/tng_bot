@@ -1,0 +1,6 @@
+Click
+bs4
+requests
+tqdm
+cerberus
+markovify
