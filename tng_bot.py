@@ -30,7 +30,8 @@ CHARACTER_LIST=['picard',
                 'wesley',
                 'laforge',
                 'yar',
-                'pulaski']
+                'pulaski',
+                'worf']
 
 @click.command()
 @click.option('--corpus_path', type=click.Path(), help='directory that contains the corpuses')
