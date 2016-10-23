@@ -22,7 +22,15 @@ requests.packages.urllib3.disable_warnings()
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 requests.packages.urllib3.disable_warnings(SNIMissingWarning)
 
-CHARACTER_LIST=['Picard','Riker','Troi','Data','Crusher','Wesley','Laforge','Yar','Pulaski']
+CHARACTER_LIST=['picard',
+                'riker',
+                'troi',
+                'data',
+                'crusher',
+                'wesley',
+                'laforge',
+                'yar',
+                'pulaski']
 
 @click.command()
 @click.option('--corpus_path', type=click.Path(), help='directory that contains the corpuses')
@@ -82,7 +90,7 @@ def main(corpus_path, slack_token, bot_name):
             # any othe message, looks for a character name
             elif message.startswith('./{}'.format(bot_name)):
                 text = message.split(' ')
-                character = text[1]
+                character = text[1].lower()
                 if character not in CHARACTER_LIST:
                     reply = 'I do not know who {} is.'.format(character)
 
